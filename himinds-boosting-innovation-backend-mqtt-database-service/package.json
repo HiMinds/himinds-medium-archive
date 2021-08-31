@@ -1,0 +1,44 @@
+{
+  "name": "himinds-boosting-innovation-backend-mqtt-database-service",
+  "version": "0.1.0",
+  "description": "Application that listens to mqtt messages and stores them in a influx database",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HiMinds/himinds-boosting-innovation-backend-mqtt-database-service"
+  },
+  "scripts": {
+    "test": "jest --coverage",
+    "jshint": "jshint --exclude ./node_modules,./coverage .",
+    "jscpd": "jscpd --ignore \"**/*.min.js,**/*.map\" --format \"javascript\" --threshold 0 database.js index.js mqttConf.js"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/coverage/**"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": 80
+      }
+    },
+    "reporters": [ "default", "jest-junit" ]
+  },
+  "author": "Suru Dissanaike <suru.dissanaike@himinds.com> (https://www.himinds.com)",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "influx": "^5.5.0",
+    "jest": "^25.1.0",
+    "jest-junit": "^10.0.0",
+    "jscpd": "^3.1.0",
+    "jshint": "^2.11.0",
+    "moment": "^2.24.0",
+    "mqtt": "^3.0.0"
+  }
+}
